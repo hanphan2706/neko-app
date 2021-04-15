@@ -3,7 +3,7 @@ const path = require("path");
 const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = (env) => ({
-  mode: "development",
+  mode: "production",
   entry: "./src/index.js",
   module: {
     rules: [
