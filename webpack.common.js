@@ -1,10 +1,18 @@
 const webpack = require("webpack");
 const path = require("path");
-const HtmlWebPackPlugin = require("html-webpack-plugin");
 
 module.exports = (env) => ({
-  mode: "production",
-  entry: "./src/index.js",
+  mode: "development",
+  devtool: "inline-source-map",
+  devServer: {
+    historyApiFallback: true,
+  },
+  entry: ["./src/index.js"],
+  output: {
+    path: __dirname,
+    publicPath: "/",
+    filename: "bundle.js",
+  },
   module: {
     rules: [
       {
@@ -40,14 +48,5 @@ module.exports = (env) => ({
     new webpack.DefinePlugin({
       "process.env.USE_MOCK": JSON.stringify(env.mock),
     }),
-    new HtmlWebPackPlugin({
-      template: "./src/index.html",
-      filename: "./index.html",
-    }),
   ],
-  output: {
-    filename: "[name].bundle.js",
-    path: path.resolve(__dirname, "dist"),
-    clean: true,
-  },
 });

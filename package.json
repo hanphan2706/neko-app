@@ -4,9 +4,12 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "webpack serve",
-    "mock": "webpack serve --env mock=true",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "node server.js",
+    "dev": "webpack serve --open --config webpack.common.js",
+    "mock": "webpack serve --env mock=true --config webpack.dev.js",
+    "build": "webpack --config webpack.prod.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "webpack --config webpack.prod.js"
   },
   "keywords": [],
   "author": "",
@@ -25,7 +28,8 @@
     "style-loader": "^2.0.0",
     "webpack": "^5.31.2",
     "webpack-cli": "^4.6.0",
-    "webpack-dev-server": "^3.11.2"
+    "webpack-dev-server": "^3.11.2",
+    "webpack-merge": "^5.7.3"
   },
   "dependencies": {
     "@apollo/client": "^3.3.15",
@@ -35,6 +39,7 @@
     "@material-ui/lab": "^4.0.0-alpha.57",
     "@material-ui/styles": "^4.11.3",
     "clsx": "^1.1.1",
+    "express": "^4.17.1",
     "graphql": "^15.5.0",
     "graphql-tag": "^2.12.3",
     "lodash": "^4.17.21",
