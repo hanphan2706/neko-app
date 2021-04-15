@@ -31,7 +31,7 @@ const Home = () => {
     <div className="h-screen">
       <div className="h-1/2 flex justify-center items-center text-center">
         <div className="max-w-screen-md w-full">
-          <h1>Looking a job for your cat ?</h1>
+          <h1>Looking a job for your cat hehe ?</h1>
           <p className="mb-8">
             Sometimes they get bored and want to make some money. Don't hesitate
             to upload their cv here to help your cats finding a good job on the
