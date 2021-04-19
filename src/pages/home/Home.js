@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button, IconButton } from "@material-ui/core";
+import { Button } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import PetsIcon from "@material-ui/icons/Pets";
 import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied";

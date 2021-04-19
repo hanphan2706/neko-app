@@ -1,6 +1,7 @@
 import React, { useRef } from "react";
 import PropTypes from "prop-types";
 import { v4 as uuidv4 } from "uuid";
+import { FILE_TYPE, IMAGE_FILE_ACCEPTED_TYPES } from "@shared/constants";
 
 const readFile = (file) => {
   return new Promise((resolve) => {
@@ -14,8 +15,8 @@ const readFile = (file) => {
 
 const getAcceptedFileTypes = (type) => {
   switch (type) {
-    case "image":
-      return ["image/jpg", "image/jpeg", "image/png"];
+    case FILE_TYPE.Image:
+      return IMAGE_FILE_ACCEPTED_TYPES;
     default:
       return null;
   }
@@ -85,7 +86,7 @@ FileUpload.defaultProps = {
   multiple: false,
   inputName: "input-upload",
   accept: "image/*",
-  type: "image",
+  type: FILE_TYPE.Image,
   onReadingFile: () => {},
   disabled: false,
 };

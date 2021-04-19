@@ -2,21 +2,7 @@ import React, { useState } from "react";
 import PropTypes from "prop-types";
 import { TextField, Button, Select, MenuItem } from "@material-ui/core";
 import { ImagesUpload } from "@components";
-
-const JOBS = [
-  {
-    id: "bodyguard",
-    name: "Bodyguard",
-  },
-  {
-    id: "mentalHealthDoctor",
-    name: "Mental Health Doctor",
-  },
-  {
-    id: "roommate",
-    name: "Roommate",
-  },
-];
+import { JOBS } from "@shared/constants";
 
 const Form = ({ onSubmit, setErrorMessage }) => {
   const [data, setData] = useState({

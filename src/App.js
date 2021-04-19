@@ -1,9 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Home from "./pages/home/Home";
-import Registration from "./pages/registration/Registration";
-import Cats from "./pages/cats/Cats";
-import { ApiProvider } from "./service/apollo";
+import { Home, Registration, Cats } from "@pages";
+import { ApiProvider } from "@services";
 
 const App = () => (
   <ApiProvider useMock={process.env.USE_MOCK}>

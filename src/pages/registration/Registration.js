@@ -1,42 +1,22 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { useMutation } from "@apollo/client";
 import { Stepper, IconButton, Step, StepLabel } from "@material-ui/core";
 import { Alert } from "@material-ui/lab";
 import HomeIcon from "@material-ui/icons/Home";
+
+import { REGISTRATION_STEPS } from "@shared/constants";
+import { PetService } from "@services";
+
 import Policy from "./Policy";
 import Form from "./Form";
 import ThankYouMessage from "./ThankYouMessage";
-import { gql, useMutation } from "@apollo/client";
-
-const REGISTRATION_STEPS = [
-  {
-    id: "policy",
-    label: "Agree to our policy",
-  },
-  { id: "uploadCv", label: "Upload cv of your cat" },
-  {
-    id: "done",
-    label: "Confirm and finish",
-  },
-];
-
-const CREATE_PET_PROFILE = gql`
-  mutation createPetProfile($input: PetInput!) {
-    createPetProfile(input: $input) {
-      payload {
-        id
-      }
-      error {
-        code
-        messsage
-      }
-    }
-  }
-`;
 
 const Registration = () => {
   const [activeStep, setActiveStep] = useState(0);
-  const [createPetProfile] = useMutation(CREATE_PET_PROFILE);
+  const [createPetProfile] = useMutation(
+    PetService.mutations.CREATE_PET_PROFILE
+  );
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmitFom = ({ name, jobType, jobDescription }) => {

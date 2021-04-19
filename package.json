@@ -1,18 +1,18 @@
 {
   "name": "neko-app",
   "version": "1.0.0",
-  "description": "",
+  "description": "Neko personal project",
   "main": "index.js",
   "scripts": {
     "start": "node server.js",
-    "dev": "webpack serve --open --config webpack.common.js",
-    "mock": "webpack serve --env mock=true --config webpack.common.js",
-    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack serve --env development --open",
+    "mock": "webpack serve --env development mock --open",
+    "build": "webpack --env production mock",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "heroku-postbuild": "webpack --env mock=true --config webpack.prod.js"
+    "heroku-postbuild": "webpack --env production mock"
   },
   "keywords": [],
-  "author": "",
+  "author": "HanPhan",
   "license": "ISC",
   "devDependencies": {
     "@babel/core": "^7.13.15",
