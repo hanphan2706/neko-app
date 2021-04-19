@@ -1,19 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Button } from "@material-ui/core";
+import { Button, IconButton } from "@material-ui/core";
 import { makeStyles } from "@material-ui/styles";
 import PetsIcon from "@material-ui/icons/Pets";
 import SentimentSatisfiedIcon from "@material-ui/icons/SentimentSatisfied";
-
-import { gql, useQuery } from "@apollo/client";
-
-const GET_PET = gql`
-  query getPet {
-    pet {
-      name
-    }
-  }
-`;
 
 const useStyles = makeStyles({
   customBtn: {
@@ -23,15 +13,13 @@ const useStyles = makeStyles({
 });
 
 const Home = () => {
-  const { loading, error, data } = useQuery(GET_PET);
-  console.log(loading, error, data);
   const classes = useStyles();
 
   return (
     <div className="h-screen">
       <div className="h-1/2 flex justify-center items-center text-center">
         <div className="max-w-screen-md w-full">
-          <h1>Looking a job for your cat hehe ?</h1>
+          <h1>Looking a job for your cat ?</h1>
           <p className="mb-8">
             Sometimes they get bored and want to make some money. Don't hesitate
             to upload their cv here to help your cats finding a good job on the
