@@ -23,7 +23,7 @@ const Home = () => {
   const classes = useStyles();
 
   return (
-    <div className="h-screen">
+    <div className="h-screen min-h-screen">
       <div className="h-1/2 flex justify-center items-center text-center">
         <div className="max-w-screen-md w-full">
           <h1 className="font-semibold">Looking a job for your cat ?</h1>

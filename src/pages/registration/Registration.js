@@ -73,7 +73,7 @@ const Registration = () => {
   };
 
   return (
-    <div className="flex h-screen justify-center">
+    <div className="flex justify-center">
       <div className="max-w-screen-lg w-full p-8">
         <div className="text-center">
           <IconButton component={Link} to="/">
