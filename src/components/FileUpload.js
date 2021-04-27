@@ -7,7 +7,6 @@ const readFile = (file) => {
   return new Promise((resolve) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
-    console.log("aaaaa");
     reader.onload = () => {
       resolve({ id: uuidv4(), file, content: reader.result });
     };
