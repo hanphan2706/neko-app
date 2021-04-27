@@ -35,7 +35,7 @@ export const ImagesUpload = ({ multiple, inputName, imgSource, onDone }) => {
   return (
     <div className="relative rounded-full h-48 w-48 flex items-center justify-center border border-gray-400">
       {imgSource && (
-        <img className="rounded-full" src={imgSource} alt="image" />
+        <img className="rounded-full h-full" src={imgSource} alt="image" />
       )}
       <FileUpload
         multiple={multiple}

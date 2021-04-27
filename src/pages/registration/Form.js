@@ -49,7 +49,6 @@ const Form = ({ onSubmit, setErrorMessage }) => {
             onChange={handleChange}
             variant="outlined"
             required
-            autoFocus
           />
           <div className="mt-8 mb-8">
             <Select

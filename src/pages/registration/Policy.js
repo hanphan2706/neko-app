@@ -6,7 +6,7 @@ const Policy = ({ onAgreed }) => {
   return (
     <div className="text-center">
       <p className="mb-8">
-        Please make sure you've alreay have permission of your cat before doing
+        Please make sure you've alreay had permission of your cat before doing
         this.
       </p>
       <Button variant="outlined" onClick={onAgreed}>
