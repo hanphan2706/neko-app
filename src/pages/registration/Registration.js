@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import { useMutation } from "@apollo/client";
 import { Stepper, IconButton, Step, StepLabel } from "@material-ui/core";
+import { makeStyles } from "@material-ui/styles";
 import { Alert } from "@material-ui/lab";
 import HomeIcon from "@material-ui/icons/Home";
 
@@ -12,7 +13,18 @@ import Policy from "./Policy";
 import Form from "./Form";
 import ThankYouMessage from "./ThankYouMessage";
 
+const useStyles = makeStyles((theme) => ({
+  icon: {
+    "&:first-child": {
+      [theme.breakpoints.down("md")]: {
+        fontSize: "3rem",
+      },
+    },
+  },
+}));
+
 const Registration = () => {
+  const classes = useStyles();
   const [activeStep, setActiveStep] = useState(0);
   const [createPetProfile] = useMutation(
     PetService.mutations.CREATE_PET_PROFILE
@@ -62,12 +74,14 @@ const Registration = () => {
 
   return (
     <div className="flex h-screen justify-center">
-      <div className="max-w-screen-md w-full p-8">
-        <div className="mb-8 mt-8 text-center">
+      <div className="max-w-screen-lg w-full p-8">
+        <div className="text-center">
           <IconButton component={Link} to="/">
-            <HomeIcon />
+            <HomeIcon classes={{ root: classes.icon }} />
           </IconButton>
-          <h1>Just a few steps to get your cat the first job</h1>
+          <h1 className="mt-8">
+            Just a few steps to get your cat the first job
+          </h1>
         </div>
         <Stepper activeStep={activeStep}>
           {REGISTRATION_STEPS.map((step) => (

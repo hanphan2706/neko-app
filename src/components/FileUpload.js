@@ -7,6 +7,7 @@ const readFile = (file) => {
   return new Promise((resolve) => {
     const reader = new FileReader();
     reader.readAsDataURL(file);
+    console.log("aaaaa");
     reader.onload = () => {
       resolve({ id: uuidv4(), file, content: reader.result });
     };
@@ -39,7 +40,6 @@ export const FileUpload = ({
       target: { files },
     } = e;
     if (!files || (files && files.length === 0)) return;
-
     onReadingFile();
 
     const data = [];
@@ -57,6 +57,7 @@ export const FileUpload = ({
           data.push(file);
           if (data.length === files.length) {
             inputRef.current.value = "";
+
             onDone({ data });
           }
         })

@@ -32,7 +32,7 @@ const Form = ({ onSubmit, setErrorMessage }) => {
   return (
     <div className="flex flex-col">
       <div className="flex">
-        <div className="w-1/3 pr-8">
+        <div className="w-1/3 flex justify-center">
           <ImagesUpload
             imgSource={data.avatar ? data.avatar.content : ""}
             onDone={handleUploadDone}

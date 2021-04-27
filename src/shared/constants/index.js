@@ -1,12 +1,12 @@
 export const REGISTRATION_STEPS = [
   {
-    id: "policy",
-    label: "Agree to our policy",
+    id: "agreement",
+    label: "Agreement",
   },
-  { id: "uploadCv", label: "Upload cv of your cat" },
+  { id: "uploadCv", label: "Upload cv" },
   {
     id: "done",
-    label: "Confirm and finish",
+    label: "Done",
   },
 ];
 

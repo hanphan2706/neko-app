@@ -3,7 +3,25 @@
 @tailwind utilities;
 
 @layer base {
-  h1 {
-    @apply text-2xl;
+  @screen md {
+    body {
+      @apply text-3xl;
+    }
+    h1 {
+      line-height: 1.5;
+      font-size: 3rem;
+    }
   }
+  @screen lg {
+    body {
+      @apply text-lg;
+    }
+    h1 {
+      @apply text-2xl;
+    }
+  }
+}
+
+body {
+  font-family: "Roboto", sans-serif;
 }

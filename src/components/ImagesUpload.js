@@ -22,7 +22,10 @@ export const ImagesUpload = ({ multiple, inputName, imgSource, onDone }) => {
   const classes = useStyles();
   const [isUploading, setIsUploading] = useState(false);
 
-  const handleReadingFile = () => setIsUploading(true);
+  const handleReadingFile = () => {
+    console.log("call?");
+    setIsUploading(true);
+  };
 
   const handleUploadDone = (result) => {
     setIsUploading(false);
